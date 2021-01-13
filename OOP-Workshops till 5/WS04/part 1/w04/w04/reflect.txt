@@ -1,0 +1,14 @@
+In composition one class completely contains another class and also determines its lifetime, 
+whereas an aggregator has an instance of a class that determines its lifetime. The composition is a stronger relationship
+than the aggregation. the composer is responsible to destroy the other class before or with its destruction.
+we can implement composition by sub-objects or pointers, we just allocate a class into the other class.
+the aggregation does not manage the creation or destruction of objects and it is more flexible, in our code 
+reservation is created by the restaurant so that it can check on confirmationSender because it exits because 
+of reservation.
+In composition copy and move are responsible for allocating and destructing whereas in aggregation it is not 
+responsible for allocating and destructing it just will move or copy our pointer.
+This workshop was a refresher on the pointer and also I had a very silly mistake in the friend function as
+I didn't enter the const in my part1 fr friend function by for the second part I added that and it started 
+to give me binary operator error so I fixed that part to fix that, other than that I also had conditional jumps 
+as I forgot to enter my destructor for reservation.
+Last week's quiz for lambda was good and I mostly got all my answers right according to me.

@@ -1,0 +1,14 @@
+In this workshop we had to create copy constructor and copy assignment along with the move construction and move assignment operator 
+which gave me a brief idea about how things actually work for move semantics which makes it more efficent and fast in comparision to the other. 
+In move we change the addresses rather then the values, move semnatics move the ownership from one objects to another,
+we can also localize as move constructor can call move assignment operator as they work on similar logic.
+I also got a deeper understanding of rvalue and lvalue as during the last weeks quiz i messed that up, but now i have 
+understood that rvalue is a temporary value and lvalue which is also the current value is the values whose address we take.
+our move operator makes a shallow copy of the reference object to current objectand then delete the refernce object.
+
+In this workshop we also use steady_clock::time_point which we can use like stopwatch to calculate the time a event took.
+
+i struggled the most during submission as at first i had problems in opening .bashrc file which i asked you about and the other part was with my code as at first i had 
+invaild size error on my msg string and later i realized my stupid mistake that i was assigning my strings to nullptr which was wrong and also i had problems with my 
+copy constructor at first as it was not copy the values correctly as i was not correctly assinging values to my string properly o i changed that too.
+

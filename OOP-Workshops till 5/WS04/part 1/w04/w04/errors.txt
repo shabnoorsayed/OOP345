@@ -1,0 +1,340 @@
+Restaurant.cpp: In constructor ‘sdds::Restaurant::Restaurant(sdds::Reservation**, size_t)’:
+Restaurant.cpp:18:22: warning: comparison of integer expressions of different signedness: ‘int’ and ‘size_t’ {aka ‘long unsigned int’} [-Wsign-compare]
+   18 |   for (auto i = 0; i < cnt; i++)
+      |                    ~~^~~~~
+Restaurant.cpp: In member function ‘sdds::Restaurant& sdds::Restaurant::operator=(const sdds::Restaurant&)’:
+Restaurant.cpp:40:23: warning: comparison of integer expressions of different signedness: ‘int’ and ‘size_t’ {aka ‘long unsigned int’} [-Wsign-compare]
+   40 |    for (auto i = 0; i < src.size(); ++i)
+      |                     ~~^~~~~~~~~~~~
+Restaurant.cpp:45:2: warning: control reaches end of non-void function [-Wreturn-type]
+   45 |  }
+      |  ^
+ConfirmationSender.cpp:5:5: error: redefinition of ‘sdds::ConfirmationSender::ConfirmationSender()’
+    5 |     ConfirmationSender::ConfirmationSender()
+      |     ^~~~~~~~~~~~~~~~~~
+In file included from ConfirmationSender.cpp:1:
+ConfirmationSender.h:11:3: note: ‘sdds::ConfirmationSender::ConfirmationSender()’ previously defined here
+   11 |   ConfirmationSender() {};
+      |   ^~~~~~~~~~~~~~~~~~
+ConfirmationSender.cpp: In member function ‘sdds::ConfirmationSender& sdds::ConfirmationSender::operator-=(const sdds::Reservation&)’:
+ConfirmationSender.cpp:39:22: warning: comparison of integer expressions of different signedness: ‘int’ and ‘size_t’ {aka ‘long unsigned int’} [-Wsign-compare]
+   39 |             while (i < c_cnt && !result)
+      |                    ~~^~~~~~~
+ConfirmationSender.cpp: In function ‘std::ostream& sdds::operator<<(std::ostream&, const sdds::ConfirmationSender&)’:
+ConfirmationSender.cpp:60:27: warning: comparison of integer expressions of different signedness: ‘int’ and ‘size_t’ {aka ‘long unsigned int’} [-Wsign-compare]
+   60 |         for (int i = 0; i < res.size(); i++)
+      |                         ~~^~~~~~~~~~~~
+ConfirmationSender.cpp:64:19: error: no match for ‘operator<<’ (operand types are ‘std::ostream’ {aka ‘std::basic_ostream<char>’} and ‘const sdds::Reservation’)
+   64 |                os << *res.c_res[i];
+      |                ~~ ^~ ~~~~~~~~~~~~~
+      |                |     |
+      |                |     const sdds::Reservation
+      |                std::ostream {aka std::basic_ostream<char>}
+In file included from ConfirmationSender.h:4,
+                 from ConfirmationSender.cpp:1:
+Reservation.h:22:19: note: candidate: ‘std::ostream& sdds::operator<<(std::ostream&, sdds::Reservation&)’ <near match>
+   22 |   friend ostream& operator<<(ostream& os, Reservation& res);
+      |                   ^~~~~~~~
+Reservation.h:22:19: note:   conversion of argument 2 would be ill-formed:
+ConfirmationSender.cpp:64:22: error: binding reference of type ‘sdds::Reservation&’ to ‘const sdds::Reservation’ discards qualifiers
+   64 |                os << *res.c_res[i];
+      |                      ^~~~~~~~~~~~~
+In file included from /usr/local/gcc/9.1.0/include/c++/9.1.0/iostream:39,
+                 from ConfirmationSender.h:3,
+                 from ConfirmationSender.cpp:1:
+/usr/local/gcc/9.1.0/include/c++/9.1.0/ostream:108:7: note: candidate: ‘std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(std::basic_ostream<_CharT, _Traits>::__ostream_type& (*)(std::basic_ostream<_CharT, _Traits>::__ostream_type&)) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]’
+  108 |       operator<<(__ostream_type& (*__pf)(__ostream_type&))
+      |       ^~~~~~~~
+/usr/local/gcc/9.1.0/include/c++/9.1.0/ostream:108:36: note:   no known conversion for argument 1 from ‘const sdds::Reservation’ to ‘std::basic_ostream<char>::__ostream_type& (*)(std::basic_ostream<char>::__ostream_type&)’ {aka ‘std::basic_ostream<char>& (*)(std::basic_ostream<char>&)’}
+  108 |       operator<<(__ostream_type& (*__pf)(__ostream_type&))
+      |                  ~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~
+/usr/local/gcc/9.1.0/include/c++/9.1.0/ostream:117:7: note: candidate: ‘std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(std::basic_ostream<_CharT, _Traits>::__ios_type& (*)(std::basic_ostream<_CharT, _Traits>::__ios_type&)) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>; std::basic_ostream<_CharT, _Traits>::__ios_type = std::basic_ios<char>]’
+  117 |       operator<<(__ios_type& (*__pf)(__ios_type&))
+      |       ^~~~~~~~
+/usr/local/gcc/9.1.0/include/c++/9.1.0/ostream:117:32: note:   no known conversion for argument 1 from ‘const sdds::Reservation’ to ‘std::basic_ostream<char>::__ios_type& (*)(std::basic_ostream<char>::__ios_type&)’ {aka ‘std::basic_ios<char>& (*)(std::basic_ios<char>&)’}
+  117 |       operator<<(__ios_type& (*__pf)(__ios_type&))
+      |                  ~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~
+/usr/local/gcc/9.1.0/include/c++/9.1.0/ostream:127:7: note: candidate: ‘std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(std::ios_base& (*)(std::ios_base&)) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]’
+  127 |       operator<<(ios_base& (*__pf) (ios_base&))
+      |       ^~~~~~~~
+/usr/local/gcc/9.1.0/include/c++/9.1.0/ostream:127:30: note:   no known conversion for argument 1 from ‘const sdds::Reservation’ to ‘std::ios_base& (*)(std::ios_base&)’
+  127 |       operator<<(ios_base& (*__pf) (ios_base&))
+      |                  ~~~~~~~~~~~~^~~~~~~~~~~~~~~~~
+/usr/local/gcc/9.1.0/include/c++/9.1.0/ostream:166:7: note: candidate: ‘std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(long int) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]’
+  166 |       operator<<(long __n)
+      |       ^~~~~~~~
+/usr/local/gcc/9.1.0/include/c++/9.1.0/ostream:166:23: note:   no known conversion for argument 1 from ‘const sdds::Reservation’ to ‘long int’
+  166 |       operator<<(long __n)
+      |                  ~~~~~^~~
+/usr/local/gcc/9.1.0/include/c++/9.1.0/ostream:170:7: note: candidate: ‘std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(long unsigned int) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]’
+  170 |       operator<<(unsigned long __n)
+      |       ^~~~~~~~
+/usr/local/gcc/9.1.0/include/c++/9.1.0/ostream:170:32: note:   no known conversion for argument 1 from ‘const sdds::Reservation’ to ‘long unsigned int’
+  170 |       operator<<(unsigned long __n)
+      |                  ~~~~~~~~~~~~~~^~~
+/usr/local/gcc/9.1.0/include/c++/9.1.0/ostream:174:7: note: candidate: ‘std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(bool) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]’
+  174 |       operator<<(bool __n)
+      |       ^~~~~~~~
+/usr/local/gcc/9.1.0/include/c++/9.1.0/ostream:174:23: note:   no known conversion for argument 1 from ‘const sdds::Reservation’ to ‘bool’
+  174 |       operator<<(bool __n)
+      |                  ~~~~~^~~
+In file included from /usr/local/gcc/9.1.0/include/c++/9.1.0/ostream:702,
+                 from /usr/local/gcc/9.1.0/include/c++/9.1.0/iostream:39,
+                 from ConfirmationSender.h:3,
+                 from ConfirmationSender.cpp:1:
+/usr/local/gcc/9.1.0/include/c++/9.1.0/bits/ostream.tcc:91:5: note: candidate: ‘std::basic_ostream<_CharT, _Traits>& std::basic_ostream<_CharT, _Traits>::operator<<(short int) [with _CharT = char; _Traits = std::char_traits<char>]’
+   91 |     basic_ostream<_CharT, _Traits>::
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/local/gcc/9.1.0/include/c++/9.1.0/bits/ostream.tcc:92:22: note:   no known conversion for argument 1 from ‘const sdds::Reservation’ to ‘short int’
+   92 |     operator<<(short __n)
+      |                ~~~~~~^~~
+In file included from /usr/local/gcc/9.1.0/include/c++/9.1.0/iostream:39,
+                 from ConfirmationSender.h:3,
+                 from ConfirmationSender.cpp:1:
+/usr/local/gcc/9.1.0/include/c++/9.1.0/ostream:181:7: note: candidate: ‘std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(short unsigned int) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]’
+  181 |       operator<<(unsigned short __n)
+      |       ^~~~~~~~
+/usr/local/gcc/9.1.0/include/c++/9.1.0/ostream:181:33: note:   no known conversion for argument 1 from ‘const sdds::Reservation’ to ‘short unsigned int’
+  181 |       operator<<(unsigned short __n)
+      |                  ~~~~~~~~~~~~~~~^~~
+In file included from /usr/local/gcc/9.1.0/include/c++/9.1.0/ostream:702,
+                 from /usr/local/gcc/9.1.0/include/c++/9.1.0/iostream:39,
+                 from ConfirmationSender.h:3,
+                 from ConfirmationSender.cpp:1:
+/usr/local/gcc/9.1.0/include/c++/9.1.0/bits/ostream.tcc:105:5: note: candidate: ‘std::basic_ostream<_CharT, _Traits>& std::basic_ostream<_CharT, _Traits>::operator<<(int) [with _CharT = char; _Traits = std::char_traits<char>]’
+  105 |     basic_ostream<_CharT, _Traits>::
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/local/gcc/9.1.0/include/c++/9.1.0/bits/ostream.tcc:106:20: note:   no known conversion for argument 1 from ‘const sdds::Reservation’ to ‘int’
+  106 |     operator<<(int __n)
+      |                ~~~~^~~
+In file included from /usr/local/gcc/9.1.0/include/c++/9.1.0/iostream:39,
+                 from ConfirmationSender.h:3,
+                 from ConfirmationSender.cpp:1:
+/usr/local/gcc/9.1.0/include/c++/9.1.0/ostream:192:7: note: candidate: ‘std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(unsigned int) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]’
+  192 |       operator<<(unsigned int __n)
+      |       ^~~~~~~~
+/usr/local/gcc/9.1.0/include/c++/9.1.0/ostream:192:31: note:   no known conversion for argument 1 from ‘const sdds::Reservation’ to ‘unsigned int’
+  192 |       operator<<(unsigned int __n)
+      |                  ~~~~~~~~~~~~~^~~
+/usr/local/gcc/9.1.0/include/c++/9.1.0/ostream:201:7: note: candidate: ‘std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(long long int) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]’
+  201 |       operator<<(long long __n)
+      |       ^~~~~~~~
+/usr/local/gcc/9.1.0/include/c++/9.1.0/ostream:201:28: note:   no known conversion for argument 1 from ‘const sdds::Reservation’ to ‘long long int’
+  201 |       operator<<(long long __n)
+      |                  ~~~~~~~~~~^~~
+/usr/local/gcc/9.1.0/include/c++/9.1.0/ostream:205:7: note: candidate: ‘std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(long long unsigned int) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]’
+  205 |       operator<<(unsigned long long __n)
+      |       ^~~~~~~~
+/usr/local/gcc/9.1.0/include/c++/9.1.0/ostream:205:37: note:   no known conversion for argument 1 from ‘const sdds::Reservation’ to ‘long long unsigned int’
+  205 |       operator<<(unsigned long long __n)
+      |                  ~~~~~~~~~~~~~~~~~~~^~~
+/usr/local/gcc/9.1.0/include/c++/9.1.0/ostream:220:7: note: candidate: ‘std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(double) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]’
+  220 |       operator<<(double __f)
+      |       ^~~~~~~~
+/usr/local/gcc/9.1.0/include/c++/9.1.0/ostream:220:25: note:   no known conversion for argument 1 from ‘const sdds::Reservation’ to ‘double’
+  220 |       operator<<(double __f)
+      |                  ~~~~~~~^~~
+/usr/local/gcc/9.1.0/include/c++/9.1.0/ostream:224:7: note: candidate: ‘std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(float) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]’
+  224 |       operator<<(float __f)
+      |       ^~~~~~~~
+/usr/local/gcc/9.1.0/include/c++/9.1.0/ostream:224:24: note:   no known conversion for argument 1 from ‘const sdds::Reservation’ to ‘float’
+  224 |       operator<<(float __f)
+      |                  ~~~~~~^~~
+/usr/local/gcc/9.1.0/include/c++/9.1.0/ostream:232:7: note: candidate: ‘std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(long double) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]’
+  232 |       operator<<(long double __f)
+      |       ^~~~~~~~
+/usr/local/gcc/9.1.0/include/c++/9.1.0/ostream:232:30: note:   no known conversion for argument 1 from ‘const sdds::Reservation’ to ‘long double’
+  232 |       operator<<(long double __f)
+      |                  ~~~~~~~~~~~~^~~
+/usr/local/gcc/9.1.0/include/c++/9.1.0/ostream:245:7: note: candidate: ‘std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(const void*) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>]’
+  245 |       operator<<(const void* __p)
+      |       ^~~~~~~~
+/usr/local/gcc/9.1.0/include/c++/9.1.0/ostream:245:30: note:   no known conversion for argument 1 from ‘const sdds::Reservation’ to ‘const void*’
+  245 |       operator<<(const void* __p)
+      |                  ~~~~~~~~~~~~^~~
+/usr/local/gcc/9.1.0/include/c++/9.1.0/ostream:250:7: note: candidate: ‘std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(std::nullptr_t) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__ostream_type = std::basic_ostream<char>; std::nullptr_t = std::nullptr_t]’
+  250 |       operator<<(nullptr_t)
+      |       ^~~~~~~~
+/usr/local/gcc/9.1.0/include/c++/9.1.0/ostream:250:18: note:   no known conversion for argument 1 from ‘const sdds::Reservation’ to ‘std::nullptr_t’
+  250 |       operator<<(nullptr_t)
+      |                  ^~~~~~~~~
+In file included from /usr/local/gcc/9.1.0/include/c++/9.1.0/ostream:702,
+                 from /usr/local/gcc/9.1.0/include/c++/9.1.0/iostream:39,
+                 from ConfirmationSender.h:3,
+                 from ConfirmationSender.cpp:1:
+/usr/local/gcc/9.1.0/include/c++/9.1.0/bits/ostream.tcc:119:5: note: candidate: ‘std::basic_ostream<_CharT, _Traits>& std::basic_ostream<_CharT, _Traits>::operator<<(std::basic_ostream<_CharT, _Traits>::__streambuf_type*) [with _CharT = char; _Traits = std::char_traits<char>; std::basic_ostream<_CharT, _Traits>::__streambuf_type = std::basic_streambuf<char>]’
+  119 |     basic_ostream<_CharT, _Traits>::
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/local/gcc/9.1.0/include/c++/9.1.0/bits/ostream.tcc:120:34: note:   no known conversion for argument 1 from ‘const sdds::Reservation’ to ‘std::basic_ostream<char>::__streambuf_type*’ {aka ‘std::basic_streambuf<char>*’}
+  120 |     operator<<(__streambuf_type* __sbin)
+      |                ~~~~~~~~~~~~~~~~~~^~~~~~
+ConfirmationSender.cpp:52:14: note: candidate: ‘std::ostream& sdds::operator<<(std::ostream&, const sdds::ConfirmationSender&)’
+   52 |     ostream& operator<<(std::ostream& os, const ConfirmationSender& res)
+      |              ^~~~~~~~
+ConfirmationSender.cpp:52:69: note:   no known conversion for argument 2 from ‘const sdds::Reservation’ to ‘const sdds::ConfirmationSender&’
+   52 |     ostream& operator<<(std::ostream& os, const ConfirmationSender& res)
+      |                                           ~~~~~~~~~~~~~~~~~~~~~~~~~~^~~
+In file included from /usr/local/gcc/9.1.0/include/c++/9.1.0/bits/basic_string.h:48,
+                 from /usr/local/gcc/9.1.0/include/c++/9.1.0/string:55,
+                 from /usr/local/gcc/9.1.0/include/c++/9.1.0/bits/locale_classes.h:40,
+                 from /usr/local/gcc/9.1.0/include/c++/9.1.0/bits/ios_base.h:41,
+                 from /usr/local/gcc/9.1.0/include/c++/9.1.0/ios:42,
+                 from /usr/local/gcc/9.1.0/include/c++/9.1.0/ostream:38,
+                 from /usr/local/gcc/9.1.0/include/c++/9.1.0/iostream:39,
+                 from ConfirmationSender.h:3,
+                 from ConfirmationSender.cpp:1:
+/usr/local/gcc/9.1.0/include/c++/9.1.0/string_view:582:5: note: candidate: ‘template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, std::basic_string_view<_CharT, _Traits>)’
+  582 |     operator<<(basic_ostream<_CharT, _Traits>& __os,
+      |     ^~~~~~~~
+/usr/local/gcc/9.1.0/include/c++/9.1.0/string_view:582:5: note:   template argument deduction/substitution failed:
+ConfirmationSender.cpp:64:34: note:   ‘sdds::Reservation’ is not derived from ‘std::basic_string_view<_CharT, _Traits>’
+   64 |                os << *res.c_res[i];
+      |                                  ^
+In file included from /usr/local/gcc/9.1.0/include/c++/9.1.0/string:55,
+                 from /usr/local/gcc/9.1.0/include/c++/9.1.0/bits/locale_classes.h:40,
+                 from /usr/local/gcc/9.1.0/include/c++/9.1.0/bits/ios_base.h:41,
+                 from /usr/local/gcc/9.1.0/include/c++/9.1.0/ios:42,
+                 from /usr/local/gcc/9.1.0/include/c++/9.1.0/ostream:38,
+                 from /usr/local/gcc/9.1.0/include/c++/9.1.0/iostream:39,
+                 from ConfirmationSender.h:3,
+                 from ConfirmationSender.cpp:1:
+/usr/local/gcc/9.1.0/include/c++/9.1.0/bits/basic_string.h:6416:5: note: candidate: ‘template<class _CharT, class _Traits, class _Alloc> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const std::__cxx11::basic_string<_CharT, _Traits, _Allocator>&)’
+ 6416 |     operator<<(basic_ostream<_CharT, _Traits>& __os,
+      |     ^~~~~~~~
+/usr/local/gcc/9.1.0/include/c++/9.1.0/bits/basic_string.h:6416:5: note:   template argument deduction/substitution failed:
+ConfirmationSender.cpp:64:34: note:   ‘const sdds::Reservation’ is not derived from ‘const std::__cxx11::basic_string<_CharT, _Traits, _Allocator>’
+   64 |                os << *res.c_res[i];
+      |                                  ^
+In file included from /usr/local/gcc/9.1.0/include/c++/9.1.0/bits/ios_base.h:46,
+                 from /usr/local/gcc/9.1.0/include/c++/9.1.0/ios:42,
+                 from /usr/local/gcc/9.1.0/include/c++/9.1.0/ostream:38,
+                 from /usr/local/gcc/9.1.0/include/c++/9.1.0/iostream:39,
+                 from ConfirmationSender.h:3,
+                 from ConfirmationSender.cpp:1:
+/usr/local/gcc/9.1.0/include/c++/9.1.0/system_error:217:5: note: candidate: ‘template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const std::error_code&)’
+  217 |     operator<<(basic_ostream<_CharT, _Traits>& __os, const error_code& __e)
+      |     ^~~~~~~~
+/usr/local/gcc/9.1.0/include/c++/9.1.0/system_error:217:5: note:   template argument deduction/substitution failed:
+ConfirmationSender.cpp:64:22: note:   cannot convert ‘* *(((const sdds::Reservation**)res.sdds::ConfirmationSender::c_res) + ((sizetype)(((long unsigned int)i) * 8)))’ (type ‘const sdds::Reservation’) to type ‘const std::error_code&’
+   64 |                os << *res.c_res[i];
+      |                      ^~~~~~~~~~~~~
+In file included from /usr/local/gcc/9.1.0/include/c++/9.1.0/iostream:39,
+                 from ConfirmationSender.h:3,
+                 from ConfirmationSender.cpp:1:
+/usr/local/gcc/9.1.0/include/c++/9.1.0/ostream:506:5: note: candidate: ‘template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, _CharT)’
+  506 |     operator<<(basic_ostream<_CharT, _Traits>& __out, _CharT __c)
+      |     ^~~~~~~~
+/usr/local/gcc/9.1.0/include/c++/9.1.0/ostream:506:5: note:   template argument deduction/substitution failed:
+ConfirmationSender.cpp:64:34: note:   deduced conflicting types for parameter ‘_CharT’ (‘char’ and ‘sdds::Reservation’)
+   64 |                os << *res.c_res[i];
+      |                                  ^
+In file included from /usr/local/gcc/9.1.0/include/c++/9.1.0/iostream:39,
+                 from ConfirmationSender.h:3,
+                 from ConfirmationSender.cpp:1:
+/usr/local/gcc/9.1.0/include/c++/9.1.0/ostream:511:5: note: candidate: ‘template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, char)’
+  511 |     operator<<(basic_ostream<_CharT, _Traits>& __out, char __c)
+      |     ^~~~~~~~
+/usr/local/gcc/9.1.0/include/c++/9.1.0/ostream:511:5: note:   template argument deduction/substitution failed:
+ConfirmationSender.cpp:64:22: note:   cannot convert ‘* *(((const sdds::Reservation**)res.sdds::ConfirmationSender::c_res) + ((sizetype)(((long unsigned int)i) * 8)))’ (type ‘const sdds::Reservation’) to type ‘char’
+   64 |                os << *res.c_res[i];
+      |                      ^~~~~~~~~~~~~
+In file included from /usr/local/gcc/9.1.0/include/c++/9.1.0/iostream:39,
+                 from ConfirmationSender.h:3,
+                 from ConfirmationSender.cpp:1:
+/usr/local/gcc/9.1.0/include/c++/9.1.0/ostream:517:5: note: candidate: ‘template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(std::basic_ostream<char, _Traits>&, char)’
+  517 |     operator<<(basic_ostream<char, _Traits>& __out, char __c)
+      |     ^~~~~~~~
+/usr/local/gcc/9.1.0/include/c++/9.1.0/ostream:517:5: note:   template argument deduction/substitution failed:
+ConfirmationSender.cpp:64:22: note:   cannot convert ‘* *(((const sdds::Reservation**)res.sdds::ConfirmationSender::c_res) + ((sizetype)(((long unsigned int)i) * 8)))’ (type ‘const sdds::Reservation’) to type ‘char’
+   64 |                os << *res.c_res[i];
+      |                      ^~~~~~~~~~~~~
+In file included from /usr/local/gcc/9.1.0/include/c++/9.1.0/iostream:39,
+                 from ConfirmationSender.h:3,
+                 from ConfirmationSender.cpp:1:
+/usr/local/gcc/9.1.0/include/c++/9.1.0/ostream:523:5: note: candidate: ‘template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(std::basic_ostream<char, _Traits>&, signed char)’
+  523 |     operator<<(basic_ostream<char, _Traits>& __out, signed char __c)
+      |     ^~~~~~~~
+/usr/local/gcc/9.1.0/include/c++/9.1.0/ostream:523:5: note:   template argument deduction/substitution failed:
+ConfirmationSender.cpp:64:22: note:   cannot convert ‘* *(((const sdds::Reservation**)res.sdds::ConfirmationSender::c_res) + ((sizetype)(((long unsigned int)i) * 8)))’ (type ‘const sdds::Reservation’) to type ‘signed char’
+   64 |                os << *res.c_res[i];
+      |                      ^~~~~~~~~~~~~
+In file included from /usr/local/gcc/9.1.0/include/c++/9.1.0/iostream:39,
+                 from ConfirmationSender.h:3,
+                 from ConfirmationSender.cpp:1:
+/usr/local/gcc/9.1.0/include/c++/9.1.0/ostream:528:5: note: candidate: ‘template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(std::basic_ostream<char, _Traits>&, unsigned char)’
+  528 |     operator<<(basic_ostream<char, _Traits>& __out, unsigned char __c)
+      |     ^~~~~~~~
+/usr/local/gcc/9.1.0/include/c++/9.1.0/ostream:528:5: note:   template argument deduction/substitution failed:
+ConfirmationSender.cpp:64:22: note:   cannot convert ‘* *(((const sdds::Reservation**)res.sdds::ConfirmationSender::c_res) + ((sizetype)(((long unsigned int)i) * 8)))’ (type ‘const sdds::Reservation’) to type ‘unsigned char’
+   64 |                os << *res.c_res[i];
+      |                      ^~~~~~~~~~~~~
+In file included from /usr/local/gcc/9.1.0/include/c++/9.1.0/iostream:39,
+                 from ConfirmationSender.h:3,
+                 from ConfirmationSender.cpp:1:
+/usr/local/gcc/9.1.0/include/c++/9.1.0/ostream:548:5: note: candidate: ‘template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const _CharT*)’
+  548 |     operator<<(basic_ostream<_CharT, _Traits>& __out, const _CharT* __s)
+      |     ^~~~~~~~
+/usr/local/gcc/9.1.0/include/c++/9.1.0/ostream:548:5: note:   template argument deduction/substitution failed:
+ConfirmationSender.cpp:64:34: note:   mismatched types ‘const _CharT*’ and ‘sdds::Reservation’
+   64 |                os << *res.c_res[i];
+      |                                  ^
+In file included from /usr/local/gcc/9.1.0/include/c++/9.1.0/ostream:702,
+                 from /usr/local/gcc/9.1.0/include/c++/9.1.0/iostream:39,
+                 from ConfirmationSender.h:3,
+                 from ConfirmationSender.cpp:1:
+/usr/local/gcc/9.1.0/include/c++/9.1.0/bits/ostream.tcc:321:5: note: candidate: ‘template<class _CharT, class _Traits> std::basic_ostream<_CharT, _Traits>& std::operator<<(std::basic_ostream<_CharT, _Traits>&, const char*)’
+  321 |     operator<<(basic_ostream<_CharT, _Traits>& __out, const char* __s)
+      |     ^~~~~~~~
+/usr/local/gcc/9.1.0/include/c++/9.1.0/bits/ostream.tcc:321:5: note:   template argument deduction/substitution failed:
+ConfirmationSender.cpp:64:22: note:   cannot convert ‘* *(((const sdds::Reservation**)res.sdds::ConfirmationSender::c_res) + ((sizetype)(((long unsigned int)i) * 8)))’ (type ‘const sdds::Reservation’) to type ‘const char*’
+   64 |                os << *res.c_res[i];
+      |                      ^~~~~~~~~~~~~
+In file included from /usr/local/gcc/9.1.0/include/c++/9.1.0/iostream:39,
+                 from ConfirmationSender.h:3,
+                 from ConfirmationSender.cpp:1:
+/usr/local/gcc/9.1.0/include/c++/9.1.0/ostream:565:5: note: candidate: ‘template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(std::basic_ostream<char, _Traits>&, const char*)’
+  565 |     operator<<(basic_ostream<char, _Traits>& __out, const char* __s)
+      |     ^~~~~~~~
+/usr/local/gcc/9.1.0/include/c++/9.1.0/ostream:565:5: note:   template argument deduction/substitution failed:
+ConfirmationSender.cpp:64:22: note:   cannot convert ‘* *(((const sdds::Reservation**)res.sdds::ConfirmationSender::c_res) + ((sizetype)(((long unsigned int)i) * 8)))’ (type ‘const sdds::Reservation’) to type ‘const char*’
+   64 |                os << *res.c_res[i];
+      |                      ^~~~~~~~~~~~~
+In file included from /usr/local/gcc/9.1.0/include/c++/9.1.0/iostream:39,
+                 from ConfirmationSender.h:3,
+                 from ConfirmationSender.cpp:1:
+/usr/local/gcc/9.1.0/include/c++/9.1.0/ostream:578:5: note: candidate: ‘template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(std::basic_ostream<char, _Traits>&, const signed char*)’
+  578 |     operator<<(basic_ostream<char, _Traits>& __out, const signed char* __s)
+      |     ^~~~~~~~
+/usr/local/gcc/9.1.0/include/c++/9.1.0/ostream:578:5: note:   template argument deduction/substitution failed:
+ConfirmationSender.cpp:64:22: note:   cannot convert ‘* *(((const sdds::Reservation**)res.sdds::ConfirmationSender::c_res) + ((sizetype)(((long unsigned int)i) * 8)))’ (type ‘const sdds::Reservation’) to type ‘const signed char*’
+   64 |                os << *res.c_res[i];
+      |                      ^~~~~~~~~~~~~
+In file included from /usr/local/gcc/9.1.0/include/c++/9.1.0/iostream:39,
+                 from ConfirmationSender.h:3,
+                 from ConfirmationSender.cpp:1:
+/usr/local/gcc/9.1.0/include/c++/9.1.0/ostream:583:5: note: candidate: ‘template<class _Traits> std::basic_ostream<char, _Traits>& std::operator<<(std::basic_ostream<char, _Traits>&, const unsigned char*)’
+  583 |     operator<<(basic_ostream<char, _Traits>& __out, const unsigned char* __s)
+      |     ^~~~~~~~
+/usr/local/gcc/9.1.0/include/c++/9.1.0/ostream:583:5: note:   template argument deduction/substitution failed:
+ConfirmationSender.cpp:64:22: note:   cannot convert ‘* *(((const sdds::Reservation**)res.sdds::ConfirmationSender::c_res) + ((sizetype)(((long unsigned int)i) * 8)))’ (type ‘const sdds::Reservation’) to type ‘const unsigned char*’
+   64 |                os << *res.c_res[i];
+      |                      ^~~~~~~~~~~~~
+In file included from /usr/local/gcc/9.1.0/include/c++/9.1.0/iostream:39,
+                 from ConfirmationSender.h:3,
+                 from ConfirmationSender.cpp:1:
+/usr/local/gcc/9.1.0/include/c++/9.1.0/ostream:691:5: note: candidate: ‘template<class _Ostream, class _Tp> typename std::enable_if<std::__and_<std::__not_<std::is_lvalue_reference<_Tp> >, std::__is_convertible_to_basic_ostream<_Ostream>, std::__is_insertable<typename std::__is_convertible_to_basic_ostream<_Tp>::__ostream_type, const _Tp&, void> >::value, typename std::__is_convertible_to_basic_ostream<_Tp>::__ostream_type>::type std::operator<<(_Ostream&&, const _Tp&)’
+  691 |     operator<<(_Ostream&& __os, const _Tp& __x)
+      |     ^~~~~~~~
+/usr/local/gcc/9.1.0/include/c++/9.1.0/ostream:691:5: note:   template argument deduction/substitution failed:
+/usr/local/gcc/9.1.0/include/c++/9.1.0/ostream: In substitution of ‘template<class _Ostream, class _Tp> typename std::enable_if<std::__and_<std::__not_<std::is_lvalue_reference<_Tp> >, std::__is_convertible_to_basic_ostream<_Ostream>, std::__is_insertable<typename std::__is_convertible_to_basic_ostream<_Tp>::__ostream_type, const _Tp&, void> >::value, typename std::__is_convertible_to_basic_ostream<_Tp>::__ostream_type>::type std::operator<<(_Ostream&&, const _Tp&) [with _Ostream = std::basic_ostream<char>&; _Tp = sdds::Reservation]’:
+ConfirmationSender.cpp:64:34:   required from here
+/usr/local/gcc/9.1.0/include/c++/9.1.0/ostream:691:5: error: no type named ‘type’ in ‘struct std::enable_if<false, std::basic_ostream<char>&>’
+ConfirmationSender.cpp: In copy constructor ‘sdds::ConfirmationSender::ConfirmationSender(sdds::ConfirmationSender&)’:
+ConfirmationSender.cpp:92:21: error: invalid conversion from ‘sdds::Reservation**’ to ‘const sdds::Reservation**’ [-fpermissive]
+   92 |             c_res = new Reservation * [src.size()];
+      |                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |                     |
+      |                     sdds::Reservation**
+ConfirmationSender.cpp:93:31: warning: comparison of integer expressions of different signedness: ‘int’ and ‘size_t’ {aka ‘long unsigned int’} [-Wsign-compare]
+   93 |             for (int i = 0; i < src.size(); ++i)
+      |                             ~~^~~~~~~~~~~~

@@ -1,0 +1,15 @@
+The advantage of using smart pointers is that we didn't had to worry about memory leaks and 
+deleting our object like we had in raw pointers, although for some reason i still had memory leaks 
+in the raw pointer function but i asked my friends and they told me that it happened with them too.
+
+The major difference between smart and raw pointer is basically the deallocation of memoery that 
+happens automatically in smart pointer therefore no memory leaks possible on the other hand in 
+raw pointer we ourseleves have to deallocate or it would throw exception or leaks.
+
+raw pointer example from code where we delete our object
+if (desc[i].code == price[j].code) {
+	Product* temp(new Product(desc[i].desc, price[j].price));
+	temp->validate();
+	priceList += temp;
+	delete temp;
+}
