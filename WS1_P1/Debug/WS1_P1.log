@@ -1,0 +1,5 @@
+﻿  event.cpp
+C:\Users\AutoLogon\Desktop\OOP345\OOP-Workshops\WS01\part 1\WS1_P1\WS1_P1\event.cpp(40,34): error C2660: 'strcpy': function does not take 3 arguments
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\string.h(133,1): message : see declaration of 'strcpy'
+  w1_p1.cpp
+  Generating Code...

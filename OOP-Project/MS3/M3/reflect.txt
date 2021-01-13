@@ -1,0 +1,10 @@
+This whole project was a complete roller coaster for me, I have learned so many new things the concepts which 
+we use while we do our workshops were all combine so be it containers, semnatics, vectors and algorithm
+I had troubles trying to solve the conditional jumps and debugging for the first two milestone i had 
+those because i was not intializing m_widthField at the start and for the third one i had so many conditional jumps
+at Workstation module and just because there are so many modules it was hard to find the exact problem.
+As per professors suggestion i used --track-origins=yes so that i can got complete information where the exactly i am 
+getting those jumps so that was something new.
+Other than that i also had to modify the utilities module in my second milestone as i had the more in one condition
+wrongly assigned to true.
+overall it was a good learning experience.  
